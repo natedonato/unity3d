@@ -5,6 +5,7 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
     float moveSpeed = 10;
+    public Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +21,13 @@ public class player : MonoBehaviour
         Vector3 direction = input.normalized;
         Vector3 velocity = direction * moveSpeed;
         Vector3 moveAmount = velocity * Time.deltaTime;
-
-        //transform.position += moveAmount;
+            
         transform.Translate(moveAmount);
+        if (Input.GetKeyDown("space"))
+        {
+            rb.AddForce(0, 1000, 0);
+        }
+
+
     }
 }

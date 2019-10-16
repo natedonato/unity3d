@@ -6,11 +6,12 @@ public class chaser : MonoBehaviour
 {
     public Transform targetTransform; // drag the player cube into this field in unity editor to get the player transform data
     public float moveSpeed = 7;
+    public Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb.useGravity = false;
     }
 
     // Update is called once per frame
